@@ -1,0 +1,17 @@
+# Hermes Workspace — Root Distribution Manifest
+# This workspace bundles three Hermes profile distributions:
+#   default      — Orchestrator: task triage, delegation, summarization
+#   devops-admin — Infrastructure & Systems Specialist
+#   dev-coder    — Software Engineer
+#
+# Install individual profiles:
+#   hermes profile install ./profiles/default --alias
+#   hermes profile install ./profiles/devops-admin --alias
+#   hermes profile install ./profiles/dev-coder --alias
+
+name: hermes-workspace
+version: 1.0.0
+description: "Multi-profile Hermes workspace for approval-first AI engineering on Ubuntu VPS"
+hermes_requires: ">=0.12.0"
+author: "Hermes Workspace"
+license: "MIT"

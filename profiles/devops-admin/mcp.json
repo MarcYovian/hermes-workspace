@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "description": "Read-write filesystem for infra files. Write requires approval.",
+      "transport": "stdio",
+      "command": "hermes-mcp-filesystem",
+      "args": ["--allowed-paths", "/apps/hermes-agent,/apps/9router"]
+    },
+    "docker": {
+      "description": "Full docker access. Mutations gated by approval.",
+      "transport": "stdio",
+      "command": "hermes-mcp-docker",
+      "args": []
+    },
+    "terminal": {
+      "description": "System diagnostics and service management. Mutations gated by approval.",
+      "transport": "stdio",
+      "command": "hermes-mcp-terminal",
+      "args": ["--filter-dangerous-commands"]
+    },
+    "git": {
+      "description": "Read-only git access for compose and config history",
+      "transport": "stdio",
+      "command": "hermes-mcp-git",
+      "args": ["--read-only"]
+    },
+    "telegram": {
+      "description": "Communication gateway",
+      "transport": "stdio",
+      "command": "hermes-mcp-telegram",
+      "args": []
+    }
+  }
+}

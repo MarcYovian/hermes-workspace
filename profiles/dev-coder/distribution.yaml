@@ -1,0 +1,6 @@
+name: dev-coder
+version: 1.0.0
+description: "Software Engineer — implement, modify, validate application code within approved repository boundaries"
+hermes_requires: ">=0.12.0"
+author: "Hermes Workspace"
+license: "MIT"

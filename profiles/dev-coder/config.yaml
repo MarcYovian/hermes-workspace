@@ -1,0 +1,5 @@
+model:
+  default: "9router-model"
+
+terminal:
+  cwd: /apps/repos

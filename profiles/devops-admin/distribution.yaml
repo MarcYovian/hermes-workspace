@@ -1,0 +1,6 @@
+name: devops-admin
+version: 1.0.0
+description: "Infrastructure & Systems Specialist — Docker, services, networking, logs, VPS operations"
+hermes_requires: ">=0.12.0"
+author: "Hermes Workspace"
+license: "MIT"

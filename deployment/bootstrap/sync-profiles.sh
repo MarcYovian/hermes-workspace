@@ -39,13 +39,6 @@ else
     echo "    [-] dev-coder profile directory not found, skipping"
 fi
 
-# Sync shared configs
-echo "[*] Syncing shared configurations..."
-if [ -d "$WORKSPACE_DIR/shared" ]; then
-    rsync -a "$WORKSPACE_DIR/shared/" "$HERMES_CONFIG_DIR/shared/"
-    echo "    -> shared configs synced"
-fi
-
 echo "[+] Profile sync complete."
 
 # Remind to reload Hermes
