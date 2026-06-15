@@ -1,0 +1,44 @@
+# =============================================================================
+# Approval Required — Shared Guardrails
+# =============================================================================
+# Operations that always require approval regardless of profile.
+# =============================================================================
+
+filesystem_operations:
+  - create: Creating new files outside ~/.hermes/
+  - modify: Editing existing files
+  - delete: Deleting any files
+  - rename: Renaming or moving files
+  - permission_change: chmod, chown, chattr
+
+docker_operations:
+  - container_start: docker compose up, docker start, docker run
+  - container_stop: docker compose down, docker stop, docker kill
+  - container_restart: docker compose restart, docker restart
+  - container_remove: docker rm, docker compose rm
+  - image_operations: docker build, docker pull, docker push, docker rmi
+  - volume_operations: docker volume create, docker volume rm
+  - network_operations: docker network create, docker network rm
+  - system_operations: docker system prune, docker system df (auto-allowed)
+
+system_operations:
+  - service_management: systemctl start/stop/restart/reload
+  - package_management: apt install/remove/upgrade
+  - firewall: ufw enable/disable/allow/deny/reset
+  - network: iptables changes, interface changes
+  - ssh: config changes, key management
+  - ssl: certificate operations
+
+git_operations:
+  - push: git push (all profiles)
+  - force_push: git push -f (forbidden by default)
+  - reset: git reset --hard (forbidden by default)
+  - merge: git merge (all profiles except with explicit approval)
+  - rebase: git rebase (destructive operations forbidden)
+
+destructive_operations:
+  - rm: Any deletion of non-trivial files
+  - docker_prune: docker system prune, docker volume prune
+  - docker_container_prune: docker container prune
+  - mass_operation: Changing more than 5 files without explicit approval
+  - configuration_change: .env, docker-compose.yml, nginx config, etc.

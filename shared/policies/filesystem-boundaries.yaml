@@ -1,0 +1,64 @@
+# =============================================================================
+# Shared Filesystem Boundaries
+# =============================================================================
+# Defines filesystem access for each profile.
+# All profiles adhere to these boundaries.
+# =============================================================================
+
+default:
+  read:
+    paths:
+      - /apps/**
+    purpose: context gathering, system understanding, delegation accuracy
+  write:
+    paths:
+      - ~/.hermes/profiles/default/**
+    purpose: internal notes, persistent memory, orchestration metadata
+    approval: self-managed (trivial operations only)
+  forbidden:
+    - /apps/repos/**
+    - /apps/hermes-agent/**
+    - /apps/9router/**
+    - /etc/**
+    - /system/**
+    purpose: mutation must be delegated to specialist profiles
+
+devops-admin:
+  read:
+    paths:
+      - /apps/**
+      - /etc/**
+      - /var/log/**
+    purpose: infrastructure diagnosis, system verification, dependency mapping
+    auto_allowed: true
+  write:
+    paths:
+      - /apps/hermes-agent/**
+      - /apps/9router/**
+    purpose: infrastructure maintenance, service management
+    approval: always required
+  forbidden:
+    patterns:
+      - "chmod 777"
+      - "chmod -R 777"
+      - "rm -rf /apps/*"
+    purpose: prevent unsafe operations
+
+dev-coder:
+  read:
+    paths:
+      - /apps/repos/**
+    purpose: code understanding, architecture analysis, debugging
+    auto_allowed: true
+  write:
+    paths:
+      - /apps/repos/**
+    purpose: code implementation, refactoring, documentation
+    approval: automatic for local changes, required for push
+  forbidden:
+    - /apps/hermes-agent/**
+    - /apps/9router/**
+    - /etc/**
+    - /system/**
+    - /var/**
+    purpose: infrastructure isolation — no code access to system areas

@@ -1,0 +1,64 @@
+# =============================================================================
+# profile.yaml - dev-coder (Software Engineer)
+# =============================================================================
+# Status: Draft
+# Schema assumptions marked with TODO
+# Target Architecture: Hermes Agent
+# =============================================================================
+
+name: dev-coder
+description: Software Engineer - implement, modify, validate application code within approved repository boundaries
+gateway: telegram
+
+model:
+  provider: 9router
+  endpoint: http://192.168.10.200:8080/v1
+
+permissions:
+  filesystem:
+    read:
+      - /apps/repos/**
+    write:
+      - /apps/repos/**
+    # approval required for destructive file operations, repo-wide rewrites
+    forbidden:
+      - /apps/hermes-agent/*
+      - /apps/9router/*
+      - /etc/*
+      - /system/*
+  docker:
+    read: true
+    # For development context: read compose files, env configs
+    write: false
+    # No docker runtime operations. Those belong to devops-admin.
+  git:
+    read: true
+    write: true
+    # Local operations allowed: branch, add, commit
+    # Remote operations (push) require approval
+    forbidden:
+      - git push -f
+      - git reset --hard
+      - git clean -fd
+      - direct commit/push to main/master
+  system:
+    read: false
+    write: false
+    # No system-level access. Infrastructure belongs to devops-admin.
+
+memory:
+  strategy: mostly-stateless with session context
+  persist:
+    - repository conventions per project
+    - known architecture patterns per codebase
+    - recurring task patterns
+  scope: ~/.hermes/profiles/dev-coder/
+
+prompt:
+  system: SYSTEM_PROMPT.md
+
+soul: SOUL.md
+
+skills: SKILLS.md
+
+mcp: MCP.md

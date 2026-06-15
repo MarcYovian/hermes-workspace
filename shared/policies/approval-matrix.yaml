@@ -1,0 +1,108 @@
+# =============================================================================
+# Shared Approval Matrix
+# =============================================================================
+# Defines approval levels across all profiles.
+# All profiles must adhere to these levels.
+# =============================================================================
+
+# Level 0 — Auto Allowed (No Approval)
+auto_allowed:
+  description: Read-only operations, inspection, analysis, observation
+  examples:
+    - pwd
+    - whoami
+    - ls
+    - tree
+    - cat (read-only)
+    - grep
+    - tail
+    - head
+    - docker ps
+    - docker logs
+    - docker stats
+    - docker inspect
+    - docker compose ps
+    - docker compose config
+    - git status
+    - git diff
+    - git branch
+    - git log
+    - free -h
+    - df -h
+    - uptime
+    - top
+    - journalctl (read)
+    - ss
+    - netstat
+    - systemctl status
+  purpose:
+    - diagnostics
+    - inspection
+    - explanation
+    - troubleshooting
+
+# Level 1 — Approval Required
+approval_required:
+  description: Write, edit, state mutation, git mutation, configuration changes
+  examples:
+    - touch
+    - echo ">" file
+    - sed -i
+    - cp
+    - mv
+    - git add
+    - git commit
+    - git push
+    - docker compose up
+    - docker compose restart
+    - docker restart
+    - systemctl restart
+    - systemctl start
+    - systemctl stop
+  behavior:
+    - explain plan
+    - explain risk
+    - request approval
+    - execute after approval
+
+# Level 2 — High Risk Approval
+high_risk_approval:
+  description: Delete, stop, infrastructure mutation, permission mutation, package install
+  examples:
+    - rm
+    - docker compose down
+    - systemctl stop (critical service)
+    - chmod
+    - chown
+    - apt install
+    - apt remove
+    - iptables
+    - ufw (enable/disable/allow/deny)
+  behavior:
+    - explain impact
+    - explain rollback
+    - ask explicit confirmation
+    - backup if applicable
+
+# Level 3 — Forbidden by Default
+forbidden_by_default:
+  description: Destructive system operations, credential exposure, security weakening
+  examples:
+    - chmod 777
+    - chmod -R 777
+    - rm -rf /
+    - rm -rf /apps/*
+    - docker system prune -a
+    - docker volume prune
+    - docker container prune
+    - ufw reset
+    - iptables reset
+    - git push -f
+    - git push origin main/master
+    - database drop
+    - expose secrets in output
+  behavior:
+    - block and explain why
+    - require explicit override acknowledgment
+    - never execute without explicit override
+  response: "This action violates workspace policy. Please explicitly override if intentional."

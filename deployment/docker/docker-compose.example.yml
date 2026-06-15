@@ -1,0 +1,82 @@
+# =============================================================================
+# docker-compose.example.yml — Hermes Agent Deployment
+# =============================================================================
+# Example configuration for running Hermes Agent with 9Router.
+# Copy to docker-compose.yml and configure environment variables.
+# =============================================================================
+
+version: "3.8"
+
+services:
+  hermes-agent:
+    image: hermes-agent:latest  # Replace with actual Hermes Agent image
+    container_name: hermes-agent
+    restart: unless-stopped
+
+    environment:
+      # Telegram
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+
+      # 9Router (model provider)
+      - LLM_PROVIDER=openai-compatible
+      - LLM_ENDPOINT=http://192.168.10.200:8080/v1
+      - LLM_API_KEY=${LLM_API_KEY}
+
+      # Profile configuration
+      - HERMES_DEFAULT_PROFILE=default
+      - HERMES_PROFILES_DIR=/app/profiles
+
+      # Memory
+      - HERMES_MEMORY_DIR=/data/memory
+
+      # Logging
+      - HERMES_LOG_LEVEL=info
+
+    volumes:
+      # Profile configurations (read-only)
+      - ${HOME}/.hermes/profiles:/app/profiles:ro
+
+      # Persistent memory
+      - hermes_memory:/data/memory
+
+      # Docker socket for container management
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+      # Filesystem access to apps
+      - /apps:/apps:ro  # default: read-only
+      # Note: devops-admin profile may need write access for specific paths.
+      # Use separate volume mounts with appropriate permissions if needed.
+
+    networks:
+      - hermes-network
+
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  hermes-network:
+    name: hermes-network
+    driver: bridge
+
+volumes:
+  hermes_memory:
+    name: hermes-memory-data
+
+# === Notes ===
+# 1. 9Router must be running at LLM_ENDPOINT before starting Hermes.
+# 2. TELEGRAM_BOT_TOKEN and LLM_API_KEY must be set in .env file.
+# 3. Docker socket is mounted read-only for safety.
+# 4. /apps is mounted read-only by default. Override per-profile if needed.
+# 5. Adjust health check endpoint to match Hermes Agent's actual health endpoint.

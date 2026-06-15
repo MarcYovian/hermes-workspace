@@ -1,0 +1,66 @@
+# =============================================================================
+# Shared Security Policy
+# =============================================================================
+# Principle of Least Privilege applies to all profiles.
+# =============================================================================
+
+# Core Security Principles
+principles:
+  - least_privilege: Profiles have minimum access needed
+  - read_heavy: Read operations auto-allowed, writes require intent
+  - human_in_the_loop: Final decision stays with user
+  - audit_trail: All mutations must be traceable
+  - no_secret_exposure: Never output credentials, keys, or tokens
+
+# Forbidden Operations (All Profiles)
+forbidden_operations:
+  - chmod 777
+  - chmod -R 777
+  - chown root:root (blindly)
+  - rm -rf /
+  - docker system prune -a
+  - docker volume prune (without explicit override)
+  - ufw reset
+  - iptables reset
+  - git push -f
+  - git push to main/master
+  - exposing secrets in output
+  - hardcoding credentials in source code
+
+# Credential Handling
+credential_policy:
+  - Never output API keys, database passwords, tokens, or secrets
+  - Never commit secrets to git
+  - Use environment variables or framework secrets management
+  - Report credential exposure as security incident
+
+# Filesystem Security
+filesystem_security:
+  - Prefer ACL over chmod
+  - Prefer group-based access over world-writable
+  - Use least privilege for all file operations
+  - Never create world-writable files
+
+# Container Security
+container_security:
+  - Never run containers as root without justification
+  - Prefer read-only root filesystem where possible
+  - Never expose Docker socket unnecessarily
+  - Use specific tags, never latest for production
+  - Scan for vulnerabilities regularly
+
+# Network Security
+network_security:
+  - Never disable firewall without approval
+  - Default deny inbound, allow outbound
+  - Use specific port exposures, not wide ranges
+  - Prefer reverse proxy over direct container exposure
+  - Use SSL/TLS for all external communication
+
+# Incident Response
+incident_response:
+  detect: Monitor logs and health checks
+  contain: Isolate affected service
+  diagnose: Root cause analysis from evidence
+  recover: Restore from backup or rollback
+  report: Document incident in runbooks/

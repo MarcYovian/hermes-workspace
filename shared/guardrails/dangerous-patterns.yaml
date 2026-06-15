@@ -1,0 +1,72 @@
+# =============================================================================
+# Dangerous Patterns — Shared Guardrails
+# =============================================================================
+# Behavioral patterns that are dangerous and must be avoided.
+# =============================================================================
+
+patterns:
+  blind_restart:
+    description: Restarting services without diagnosis
+    examples:
+      - "Restart all containers"
+      - "Restart nginx without checking config"
+      - "Restart Docker daemon"
+    risk: Masks underlying issues, causes cascading failures
+    mitigation:
+      - Inspect health first
+      - Check logs
+      - Verify dependencies
+      - Explain why restart is needed
+    allowed: Only with approval after diagnosis
+
+  blind_assumption:
+    description: Assuming infrastructure state without verification
+    examples:
+      - "Docker is probably running"
+      - "Port 8080 is likely open"
+      - "Service should be healthy"
+    risk: Incorrect diagnoses lead to wrong actions
+    mitigation:
+      - Always verify with command output
+      - Quote exact state in reports
+      - Never say "probably" or "likely"
+    allowed: Never — always verify
+
+  mass_mutation:
+    description: Changing multiple things at once without isolation
+    examples:
+      - "Update all config files"
+      - "Restart all services"
+      - "Upgrade all packages"
+    risk: Cannot isolate cause of failure, broad blast radius
+    mitigation:
+      - Change one thing at a time
+      - Validate after each change
+      - Have rollback per change
+    allowed: Only with explicit approval and rollback plan
+
+  permission_escalation:
+    description: Using excessive permissions instead of correct ones
+    examples:
+      - "chmod 777 to fix permission issue"
+      - "Run everything as root"
+      - "sudo for every command"
+    risk: Security vulnerabilities, data exposure
+    mitigation:
+      - Diagnose specific permission issue
+      - Apply minimal permission fix
+      - Use group-based access
+    allowed: Never — always use least privilege
+
+  panic_action:
+    description: Taking drastic action under pressure
+    examples:
+      - "Delete everything and rebuild"
+      - "Restart all services at once"
+      - "Reset firewall to default"
+    risk: Causes more damage than the original issue
+    mitigation:
+      - Step back and diagnose
+      - Apply minimal fix
+      - Prefer rollback over rebuild
+    allowed: Never — always diagnose first

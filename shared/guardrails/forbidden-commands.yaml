@@ -1,0 +1,69 @@
+# =============================================================================
+# Forbidden Commands — Shared Guardrails
+# =============================================================================
+# These commands are forbidden for ALL profiles by default.
+# Execution requires explicit override from user.
+# =============================================================================
+
+dangerous_permissions:
+  - command: "chmod 777"
+    reason: World-writable permissions — security risk
+    safe_alternative: "Use specific permissions (755 for dirs, 644 for files)"
+  - command: "chmod -R 777"
+    reason: Recursive world-writable — severe security risk
+    safe_alternative: "Apply specific permissions per file type"
+  - command: "sudo chmod 777"
+    reason: Root-level insecure permissions
+    safe_alternative: "Use ACL or group-based permissions with sudo"
+
+destructive_cleanup:
+  - command: "rm -rf /"
+    reason: Destroys entire filesystem
+  - command: "rm -rf /*"
+    reason: Destroys entire filesystem
+  - command: "rm -rf /apps"
+    reason: Destroys all applications
+  - command: "rm -rf /etc"
+    reason: Destroys system configuration
+
+docker_destructive:
+  - command: "docker system prune -a"
+    reason: Removes all unused containers, networks, images, build cache
+    safe_alternative: "docker system df (check first), docker container prune --filter 'until=24h'"
+  - command: "docker volume prune"
+    reason: Removes all unused volumes — potential data loss
+    safe_alternative: "docker volume ls (inspect first), manual volume removal"
+  - command: "docker container prune"
+    reason: Removes all stopped containers
+    safe_alternative: "docker container ls -a (inspect first), selective removal"
+  - command: "docker image prune -a"
+    reason: Removes all unused images
+    safe_alternative: "docker image ls (inspect first), selective removal"
+
+network_destructive:
+  - command: "ufw reset"
+    reason: Disables and resets all firewall rules — leaves system exposed
+    safe_alternative: "ufw status numbered (inspect first), remove specific rules"
+  - command: "iptables -F"
+    reason: Flushes all iptables rules — breaks all firewall rules
+    safe_alternative: "iptables -L -n -v (inspect first), remove specific rules"
+  - command: "iptables -P INPUT ACCEPT"
+    reason: Sets default policy to accept — disables firewall
+    safe_alternative: "iptables -L -n (inspect first), targeted rule change"
+
+git_destructive:
+  - command: "git push -f"
+    reason: Force push — overwrites remote history, data loss for collaborators
+    safe_alternative: "git push (without force), or git push --force-with-lease"
+  - command: "git push origin main"
+    reason: Direct push to protected branch
+    safe_alternative: "Create feature branch and push that"
+  - command: "git push origin master"
+    reason: Direct push to protected branch
+    safe_alternative: "Create feature branch and push that"
+  - command: "git reset --hard HEAD~"
+    reason: Destructive history rewrite
+    safe_alternative: "git reset --soft HEAD~ (preserves changes)"
+  - command: "git clean -fd"
+    reason: Force deletes untracked files — irreversible
+    safe_alternative: "git clean -n (dry-run first)"

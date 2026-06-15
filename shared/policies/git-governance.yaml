@@ -1,0 +1,75 @@
+# =============================================================================
+# Shared Git Governance
+# =============================================================================
+# Git is the single source of truth.
+# Memory must never replace repository history.
+# =============================================================================
+
+# Branch Policy
+branch_policy:
+  protected_branches:
+    - main
+    - master
+    - production
+  direct_work:
+    allowed: false
+    reason: All work must be on feature/fix/docs/refactor branches
+  branch_naming:
+    feature: feature/<task-name>
+    fix: fix/<issue-name>
+    docs: docs/<topic>
+    refactor: refactor/<module>
+    hotfix: hotfix/<issue-name>
+  examples:
+    feature: feature/select2-server-side
+    fix: fix/datatable-rowspan
+    docs: docs/payment-module
+    refactor: refactor/repository-pattern
+
+# Commit Policy
+commit_policy:
+  format: "type(scope): description"
+  types:
+    - feat: new feature
+    - fix: bug fix
+    - refactor: code change without feature/fix
+    - docs: documentation only
+    - test: adding/updating tests
+    - chore: maintenance, deps, config
+  discipline:
+    - small atomic commits
+    - logical grouping
+    - clean history
+  avoid:
+    - massive unrelated commits
+    - mixed concern commits
+    - debug commits
+    - temporary workaround commits
+
+# Push Policy
+push_policy:
+  dev-coder:
+    allowed: true
+    approval: required
+    before_push:
+      - summarize changes
+      - explain affected files
+      - risk assessment
+      - test results
+      - branch target
+    forbidden:
+      - git push -f
+      - git push to main/master
+  devops-admin:
+    allowed: true
+    approval: required
+    purpose: infrastructure config changes
+  default:
+    allowed: false
+    reason: orchestrator does not mutate git
+
+# Merge Policy
+merge_policy:
+  hermes_execution: false
+  reason: Merge requires human decision
+  human_required: true

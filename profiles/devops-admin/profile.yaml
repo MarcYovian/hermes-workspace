@@ -1,0 +1,71 @@
+# =============================================================================
+# profile.yaml - devops-admin (Infrastructure Specialist)
+# =============================================================================
+# Status: Draft
+# Schema assumptions marked with TODO
+# Target Architecture: Hermes Agent
+# =============================================================================
+
+name: devops-admin
+description: Infrastructure & Systems Specialist - Docker, services, networking, logs, VPS operations
+gateway: telegram
+
+model:
+  provider: 9router
+  endpoint: http://192.168.10.200:8080/v1
+
+permissions:
+  filesystem:
+    read:
+      - /apps/*
+      - /etc/*
+    write:
+      - /apps/hermes-agent/*
+      - /apps/9router/*
+    # approval required for all write operations
+    forbidden:
+      - chmod 777
+      - chown -R root:root
+      - rm -rf /apps/*  # mass deletion forbidden
+  docker:
+    read: true
+    write: true
+    # approval required for compose up/down, restart, rm
+    forbidden:
+      - docker system prune -a
+      - docker volume prune
+      - docker container prune
+  git:
+    read: true
+    write: false
+    # No application code mutation. Application code belongs to dev-coder.
+  system:
+    read: true
+    write: true
+    # approval required for: systemctl, apt, ufw, iptables, service restart
+    forbidden:
+      - systemctl disable --now
+      - ufw reset
+      - iptables reset
+  network:
+    read: true
+    write: true
+    # approval required for firewall, reverse proxy, SSL changes
+
+memory:
+  strategy: mostly-stateless
+  persist:
+    - stable infrastructure preferences
+    - docker compose conventions
+    - known service dependencies
+    - rollback patterns
+  scope: ~/.hermes/profiles/devops-admin/
+
+prompt:
+  system: SYSTEM_PROMPT.md
+
+soul: SOUL.md
+
+skills: SKILLS.md
+
+mcp: MCP.md
