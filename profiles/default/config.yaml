@@ -4,9 +4,9 @@
 # Test with: hermes -p default config get model.default
 
 model:
-  default: "9router-model"
-  # 9Router at http://192.168.10.200:8080/v1
-  # Configure provider via: hermes -p default setup
+  default: smart
+  provider: openai-api
+  base_url: http://192.168.10.200:8080/v1
 
 terminal:
   cwd: /apps
