@@ -1,5 +1,13 @@
 # AGENTS — default (Orchestrator)
 
+## Skills
+
+| Skill | Category | Purpose | File |
+|-------|----------|---------|------|
+| delegation | orchestration | Route tasks to correct specialist profile | skills/orchestration/delegation/SKILL.md |
+| safety-check | governance | Pre-action safety validation | skills/governance/safety-check/SKILL.md |
+| summarization | communication | Aggregate specialist outputs into summaries | skills/communication/summarization/SKILL.md |
+
 ## Operational Rules
 
 ### No Direct Infrastructure Mutation
