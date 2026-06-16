@@ -8,6 +8,7 @@
 | system-diagnostics | diagnostics | Inspect host resources, services, and network state | skills/diagnostics/system-diagnostics/SKILL.md |
 | log-analysis | observability | Read and analyze system and container logs | skills/observability/log-analysis/SKILL.md |
 | rollback-execution | operations | Plan safe rollbacks for infrastructure changes | skills/operations/rollback-execution/SKILL.md |
+| server-health | monitoring | Daily health report — uptime, CPU, RAM, disk, Docker, services, network, updates | skills/monitoring/server-health/SKILL.md |
 
 ## Operational Rules
 
