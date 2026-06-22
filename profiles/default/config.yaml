@@ -4,7 +4,7 @@
 # Test with: hermes -p default config get model.default
 
 model:
-  default: smart
+  default: marc-default
   provider: openai-api
   base_url: http://192.168.10.200:8080/v1
 
