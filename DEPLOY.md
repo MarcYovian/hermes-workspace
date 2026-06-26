@@ -143,7 +143,33 @@ forge (Software Engineer)
 
 ---
 
-## 8. Setup Profile Descriptions (untuk kanban routing akurat)
+## 8. Opt-Out Bundled Skills (biar profile tetap bersih)
+
+📦 **CONTAINER:**
+
+> `hermes profile install` otomatis men-seed bundled skills (~100+ skill) ke setiap profile.
+> Skills ini kebanyakan tidak relevan (ComfyUI, LaTeX template, Apple Notes, dll).
+> Kita matikan seeding + hapus yang sudah terlanjur terinstall.
+
+```bash
+# Untuk semua profile sekaligus
+for p in atlas aegis forge; do
+  docker exec hermes-agent hermes -p $p skills opt-out --remove --yes
+done
+
+# Verifikasi — bundled skills sudah terhapus
+docker exec hermes-agent hermes skills list
+```
+
+> **Penjelasan:**
+> - `opt-out` → tulis `.no-bundled-skills` marker → `hermes update` tidak akan seed ulang
+> - `--remove` → hapus bundled skills yang **tidak dimodifikasi** (byte-identical)
+> - Skill buatan sendiri, skill dari hub, atau skill yang sudah diedit tetap aman
+> - Mau undo? `hermes skills opt-in --sync`
+
+---
+
+## 9. Setup Profile Descriptions (untuk kanban routing akurat)
 
 📦 **CONTAINER:**
 
@@ -155,7 +181,7 @@ docker exec hermes-agent hermes profile describe forge --text "Software Engineer
 
 ---
 
-## 9. Init Kanban Board
+## 10. Init Kanban Board
 
 📦 **CONTAINER:**
 
@@ -167,7 +193,7 @@ docker exec hermes-agent hermes kanban show
 
 ---
 
-## 10. Restart Container (biar gateway detek kanban board + profile baru)
+## 11. Restart Container (biar gateway detek kanban board + profile baru)
 
 🖥️ **HOST:**
 
@@ -181,7 +207,7 @@ docker compose logs -f | grep -i kanban
 
 ---
 
-## 11. Test
+## 12. Test
 
 ### Test via CLI
 
