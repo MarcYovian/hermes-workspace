@@ -1,17 +1,21 @@
 # Hermes Workspace — Root Distribution Manifest
 # This workspace bundles three Hermes profile distributions:
-#   default      — Orchestrator: task triage, delegation, summarization
-#   devops-admin — Infrastructure & Systems Specialist
-#   dev-coder    — Software Engineer
+#   atlas  — Orchestrator: task triage, delegation, summarization (GM IT/CTO)
+#   aegis  — Infrastructure & Systems Specialist (DevOps Admin)
+#   forge  — Software Engineer (Laravel/Odoo/Nuxt, Docker-first)
 #
 # Install individual profiles:
-#   hermes profile install ./profiles/default --alias
-#   hermes profile install ./profiles/devops-admin --alias
-#   hermes profile install ./profiles/dev-coder --alias
+#   hermes profile install ./profiles/atlas --alias
+#   hermes profile install ./profiles/aegis --alias
+#   hermes profile install ./profiles/forge --alias
+#
+# Deploy:
+#   git push && ssh vps "cd /apps/repos/hermes-workspace && git pull"
+#   Then on VPS: hermes gateway start
 
 name: hermes-workspace
-version: 1.0.0
-description: "Multi-profile Hermes workspace for approval-first AI engineering on Ubuntu VPS"
-hermes_requires: ">=0.12.0"
+version: 1.1.0
+description: "Multi-profile Hermes workspace — Atlas (orchestrator), Aegis (DevOps), Forge (developer)"
+hermes_requires: ">=0.15.0"
 author: "Hermes Workspace"
 license: "MIT"

@@ -1,0 +1,13 @@
+model:
+  default: atlas
+  provider: openai-api
+  base_url: http://192.168.10.200:8080/v1
+terminal:
+  cwd: /apps
+toolsets:
+  - kanban
+notification_sources:
+  - "*"
+onboarding:
+  seen:
+    busy_input_prompt: true

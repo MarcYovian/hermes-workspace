@@ -23,7 +23,7 @@ default:
     - /system/**
     purpose: mutation must be delegated to specialist profiles
 
-devops-admin:
+aegis:
   read:
     paths:
       - /apps/**
@@ -44,7 +44,7 @@ devops-admin:
       - "rm -rf /apps/*"
     purpose: prevent unsafe operations
 
-dev-coder:
+forge:
   read:
     paths:
       - /apps/repos/**

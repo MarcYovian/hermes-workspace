@@ -29,17 +29,17 @@ fi
 
 # 3. Create Hermes config directory structure
 echo "[*] Creating Hermes config directory..."
-mkdir -p "$HERMES_CONFIG_DIR"/profiles/default
-mkdir -p "$HERMES_CONFIG_DIR"/profiles/devops-admin
-mkdir -p "$HERMES_CONFIG_DIR"/profiles/dev-coder
+mkdir -p "$HERMES_CONFIG_DIR"/profiles/atlas
+mkdir -p "$HERMES_CONFIG_DIR"/profiles/aegis
+mkdir -p "$HERMES_CONFIG_DIR"/profiles/forge
 mkdir -p "$HERMES_CONFIG_DIR"/memory
 mkdir -p "$HERMES_CONFIG_DIR"/logs
 
 # 4. Symlink or copy profile configs
 echo "[*] Linking profile configurations..."
-ln -sf "$WORKSPACE_DIR/profiles/default"/* "$HERMES_CONFIG_DIR/profiles/default/" 2>/dev/null || true
-ln -sf "$WORKSPACE_DIR/profiles/devops-admin"/* "$HERMES_CONFIG_DIR/profiles/devops-admin/" 2>/dev/null || true
-ln -sf "$WORKSPACE_DIR/profiles/dev-coder"/* "$HERMES_CONFIG_DIR/profiles/dev-coder/" 2>/dev/null || true
+ln -sf "$WORKSPACE_DIR/profiles/atlas"/* "$HERMES_CONFIG_DIR/profiles/atlas/" 2>/dev/null || true
+ln -sf "$WORKSPACE_DIR/profiles/aegis"/* "$HERMES_CONFIG_DIR/profiles/aegis/" 2>/dev/null || true
+ln -sf "$WORKSPACE_DIR/profiles/forge"/* "$HERMES_CONFIG_DIR/profiles/forge/" 2>/dev/null || true
 
 # 5. Validate workspace
 echo "[*] Running workspace validation..."

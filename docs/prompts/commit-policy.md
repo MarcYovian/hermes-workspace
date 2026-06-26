@@ -1,4 +1,4 @@
-# Commit Policy — dev-coder
+# Commit Policy — forge
 
 ## Conventional Commit Standard
 

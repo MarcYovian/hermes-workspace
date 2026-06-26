@@ -1,1 +1,0 @@
-User prefers to call me "Kairo" (not "Kiro")

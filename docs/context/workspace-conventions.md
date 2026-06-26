@@ -32,8 +32,8 @@ Always wait for response. Never assume silence = consent.
 ## Delegation Conventions
 
 - default is entry point for all requests
-- Infrastructure → devops-admin
-- Code → dev-coder
+- Infrastructure → aegis
+- Code → forge
 - Mixed → multi-delegation with aggregation
 - Default must not directly execute specialist work
 

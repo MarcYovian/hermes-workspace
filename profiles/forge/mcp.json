@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "description": "Read-write filesystem for repository files within /apps/repos",
+      "transport": "stdio",
+      "command": "hermes-mcp-filesystem",
+      "args": ["--allowed-paths", "/apps/repos"]
+    },
+    "git": {
+      "description": "Full git access. Local operations auto-allowed. Push requires approval.",
+      "transport": "stdio",
+      "command": "hermes-mcp-git",
+      "args": ["--allowed-paths", "/apps/repos", "--push-gated"]
+    },
+    "terminal": {
+      "description": "Terminal for running tests, build, and docker compose commands within /apps/repos",
+      "transport": "stdio",
+      "command": "hermes-mcp-terminal",
+      "args": ["--allowed-paths", "/apps/repos", "--filter-system-commands"]
+    },
+    "docker": {
+      "description": "Full docker access for dev environment lifecycle management",
+      "transport": "stdio",
+      "command": "hermes-mcp-docker",
+      "args": []
+    },
+    "telegram": {
+      "description": "Communication gateway for approval and reporting",
+      "transport": "stdio",
+      "command": "hermes-mcp-telegram",
+      "args": []
+    }
+  }
+}

@@ -29,7 +29,7 @@ Description: imperative mood, lowercase, no period, max 72 chars
 
 ## Profile Naming
 
-- Profile directories: kebab-case (devops-admin, dev-coder)
+- Profile directories: kebab-case (aegis, forge)
 - Profile config files: UPPERCASE with underscores (SYSTEM_PROMPT.md, MEMORY_POLICY.md)
 - Shared files: kebab-case with extension
 

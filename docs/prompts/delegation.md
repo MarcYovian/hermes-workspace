@@ -23,7 +23,7 @@ Constraints:
 
 ## Examples
 
-### To devops-admin
+### To aegis
 
 ```
 Task: Investigate why Hermes Telegram bot is not responding.
@@ -42,7 +42,7 @@ Constraints:
 - No service restart without approval
 ```
 
-### To dev-coder
+### To forge
 
 ```
 Task: Fix DataTables rowspan rendering issue.

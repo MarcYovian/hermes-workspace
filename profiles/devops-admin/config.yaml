@@ -1,9 +1,0 @@
-model:
-  default: devops-admin
-  provider: openai-api
-  base_url: http://192.168.10.200:8080/v1
-terminal:
-  cwd: /apps
-onboarding:
-  seen:
-    tool_progress_prompt: true

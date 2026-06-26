@@ -1,0 +1,12 @@
+name: forge
+version: 1.1.0
+description: "Forge \u2014 Software Engineer: implement, modify, validate application\
+  \ code within Docker-based dev environments"
+hermes_requires: '>=0.12.0'
+author: Hermes Workspace
+license: MIT
+env_requires:
+- name: OPENAI_API_KEY
+  description: OpenAI API key (for model access via 9router)
+source: /apps/repos/hermes-workspace/profiles/forge
+installed_at: '2026-06-26T23:25:00+00:00'

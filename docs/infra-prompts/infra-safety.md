@@ -1,4 +1,4 @@
-# Infrastructure Safety — devops-admin
+# Infrastructure Safety — aegis
 
 Safety framework for infrastructure operations.
 

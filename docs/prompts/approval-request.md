@@ -10,7 +10,7 @@ Standard approval request format used by all profiles.
 === Approval Request ===
 
 Action: [one-line description of what will be done]
-Profile: [default | devops-admin | dev-coder]
+Profile: [atlas | aegis | forge]
 Risk Level: [low | medium | high | critical]
 
 Plan:
