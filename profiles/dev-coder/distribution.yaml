@@ -1,11 +1,12 @@
 name: dev-coder
 version: 1.0.0
-description: "Software Engineer — implement, modify, validate application code within approved repository boundaries"
-hermes_requires: ">=0.12.0"
-author: "Hermes Workspace"
-license: "MIT"
-
+description: "Software Engineer \u2014 implement, modify, validate application code\
+  \ within approved repository boundaries"
+hermes_requires: '>=0.12.0'
+author: Hermes Workspace
+license: MIT
 env_requires:
-  - name: OPENAI_API_KEY
-    description: "OpenAI API key (for model access via 9router)"
-    required: true
+- name: OPENAI_API_KEY
+  description: OpenAI API key (for model access via 9router)
+source: /apps/repos/hermes-workspace/profiles/dev-coder
+installed_at: '2026-06-22T15:59:10+00:00'

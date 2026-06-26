@@ -1,11 +1,12 @@
 name: devops-admin
 version: 1.0.0
-description: "Infrastructure & Systems Specialist — Docker, services, networking, logs, VPS operations"
-hermes_requires: ">=0.12.0"
-author: "Hermes Workspace"
-license: "MIT"
-
+description: "Infrastructure & Systems Specialist \u2014 Docker, services, networking,\
+  \ logs, VPS operations"
+hermes_requires: '>=0.12.0'
+author: Hermes Workspace
+license: MIT
 env_requires:
-  - name: OPENAI_API_KEY
-    description: "OpenAI API key (for model access via 9router)"
-    required: true
+- name: OPENAI_API_KEY
+  description: OpenAI API key (for model access via 9router)
+source: /apps/repos/hermes-workspace/profiles/devops-admin
+installed_at: '2026-06-22T15:59:02+00:00'

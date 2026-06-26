@@ -1,0 +1,93 @@
+{
+  "google-workspace": {
+    "archived_at": null,
+    "created_at": "2026-06-23T15:02:34.370091+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-23T15:17:26.533062+00:00",
+    "last_viewed_at": "2026-06-23T15:17:26.427844+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 3,
+    "view_count": 3
+  },
+  "hermes-agent": {
+    "archived_at": null,
+    "created_at": "2026-06-22T16:08:32.275744+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-23T15:02:14.877661+00:00",
+    "last_viewed_at": "2026-06-23T15:02:14.793215+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 2
+  },
+  "server-health": {
+    "archived_at": null,
+    "created_at": "2026-06-22T16:06:10.647433+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-22T16:29:31.658922+00:00",
+    "last_viewed_at": "2026-06-22T16:29:31.598657+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 2
+  },
+  "server-health-report": {
+    "archived_at": null,
+    "created_at": "2026-06-22T16:30:40.956824+00:00",
+    "created_by": null,
+    "last_patched_at": "2026-06-22T16:35:29.802110+00:00",
+    "last_used_at": "2026-06-26T00:00:43.246513+00:00",
+    "last_viewed_at": "2026-06-22T16:34:52.301417+00:00",
+    "patch_count": 1,
+    "pinned": false,
+    "state": "active",
+    "use_count": 9,
+    "view_count": 1
+  },
+  "system-diagnostics": {
+    "archived_at": null,
+    "created_at": "2026-06-23T15:17:26.476811+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-23T15:17:26.589391+00:00",
+    "last_viewed_at": "2026-06-23T15:17:26.476845+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
+  "vps-sinyora-backup": {
+    "archived_at": null,
+    "created_at": "2026-06-24T19:00:32.799121+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-25T19:00:41.157126+00:00",
+    "last_viewed_at": null,
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 0
+  },
+  "vps-sinyora-health": {
+    "archived_at": null,
+    "created_at": "2026-06-23T14:17:20.618984+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-26T00:00:43.303463+00:00",
+    "last_viewed_at": "2026-06-24T01:52:27.325121+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 6,
+    "view_count": 3
+  }
+}

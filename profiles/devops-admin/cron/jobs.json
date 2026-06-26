@@ -1,0 +1,189 @@
+{
+  "jobs": [
+    {
+      "id": "cd0abfd5aba2",
+      "name": "Server Health Report",
+      "prompt": "Generate a server health report in Indonesian following the server-health-report skill format and send it to Telegram.",
+      "skills": [
+        "server-health-report"
+      ],
+      "skill": "server-health-report",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "display": "0 0 * * *"
+      },
+      "schedule_display": "0 0 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 10
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-22T16:06:23.229656+00:00",
+      "next_run_at": "2026-06-27T00:00:00+00:00",
+      "last_run_at": "2026-06-26T00:01:54.222185+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "846740826",
+        "chat_name": "Yann",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "93e8d5fee621",
+      "name": "VPS Sinyora Health Report",
+      "prompt": "Generate VPS Sinyora health report following vps-sinyora-health skill.",
+      "skills": [
+        "vps-sinyora-health"
+      ],
+      "skill": "vps-sinyora-health",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "display": "0 0 * * *"
+      },
+      "schedule_display": "0 0 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 3
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-23T14:16:00.083895+00:00",
+      "next_run_at": "2026-06-27T00:00:00+00:00",
+      "last_run_at": "2026-06-26T00:16:49.122405+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "846740826",
+        "chat_name": "Yann",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "9221f6b4b292",
+      "name": "VPS Sinyora Database Backup",
+      "prompt": "Run VPS Sinyora database backup following vps-sinyora-backup skill.",
+      "skills": [
+        "vps-sinyora-backup"
+      ],
+      "skill": "vps-sinyora-backup",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 19 * * *",
+        "display": "0 19 * * *"
+      },
+      "schedule_display": "0 19 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 2
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-23T14:16:01.156899+00:00",
+      "next_run_at": "2026-06-26T19:00:00+00:00",
+      "last_run_at": "2026-06-25T19:06:38.391992+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "846740826",
+        "chat_name": "Yann",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "c460c46f8830",
+      "name": "VPS Sinyora SSL Check",
+      "prompt": "Check VPS Sinyora SSL certificates following vps-sinyora-ssl-monitor skill.",
+      "skills": [
+        "vps-sinyora-ssl-monitor"
+      ],
+      "skill": "vps-sinyora-ssl-monitor",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 1 * * 0",
+        "display": "0 1 * * 0"
+      },
+      "schedule_display": "0 1 * * 0",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-23T14:16:02.244465+00:00",
+      "next_run_at": "2026-06-28T01:00:00+00:00",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "846740826",
+        "chat_name": "Yann",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal"
+      ],
+      "workdir": null
+    }
+  ],
+  "updated_at": "2026-06-26T00:16:49.124613+00:00"
+}
