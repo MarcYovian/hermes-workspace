@@ -73,8 +73,8 @@ Profiles:
 
 ```txt
 default
-devops-admin
-dev-coder
+aegis
+forge
 ```
 
 have:

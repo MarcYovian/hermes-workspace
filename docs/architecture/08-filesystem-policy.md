@@ -25,7 +25,7 @@ No write.
 
 ---
 
-### `devops-admin`
+### `aegis`
 
 Read:
 
@@ -39,7 +39,7 @@ approval required.
 
 ---
 
-### `dev-coder`
+### `forge`
 
 Allowed workspace:
 

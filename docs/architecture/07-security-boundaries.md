@@ -38,7 +38,7 @@ safe orchestrator
 
 ---
 
-## `devops-admin` Security Boundary
+## `aegis` Security Boundary
 
 Allowed:
 
@@ -78,7 +78,7 @@ minimal change
 
 ---
 
-## `dev-coder` Security Boundary
+## `forge` Security Boundary
 
 Filesystem scope:
 

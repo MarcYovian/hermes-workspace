@@ -37,7 +37,7 @@ Read-only:
 
 ---
 
-### devops-admin
+### aegis
 
 Read-all:
 
@@ -51,7 +51,7 @@ approval required.
 
 ---
 
-### dev-coder
+### forge
 
 Scoped:
 

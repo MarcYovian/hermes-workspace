@@ -27,7 +27,7 @@ basic troubleshooting
 
 ---
 
-## `devops-admin` Skills
+## `aegis` Skills
 
 Examples:
 
@@ -42,7 +42,7 @@ deployment inspection
 
 ---
 
-## `dev-coder` Skills
+## `forge` Skills
 
 Examples:
 
