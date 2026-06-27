@@ -1,0 +1,47 @@
+{
+  "jobs": [
+    {
+      "id": "d5e172dd31b7",
+      "name": "Atlas - Report Scanner",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "scan_reports.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "display": "*/30 * * * *"
+      },
+      "schedule_display": "*/30 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 111
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-24T02:34:00.280415+00:00",
+      "next_run_at": "2026-06-26T10:30:00+00:00",
+      "last_run_at": "2026-06-26T10:00:34.777667+00:00",
+      "last_status": "error",
+      "last_error": "Script exited with code 2\nstderr:\n/opt/data/profiles/marc-default/scripts/scan_reports.sh: line 46: unexpected EOF while looking for matching ``'",
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "846740826",
+        "chat_name": "Yann",
+        "thread_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    }
+  ],
+  "updated_at": "2026-06-26T10:00:34.779548+00:00"
+}

@@ -11,8 +11,8 @@ Hermes Gateway (default profile)
     ▼
 9Router Model Routing
     │
-    ├── devops-admin
-    ├── dev-coder
+    ├── aegis
+    ├── forge
     └── future profiles
 ```
 
@@ -132,66 +132,56 @@ hermes-workspace/
 │
 ├── docs/
 │   ├── architecture/
+│   ├── profile-specs/
+│   ├── prompts/
+│   ├── infra-prompts/
+│   ├── policies/
+│   ├── memory-policies/
+│   ├── context/
+│   └── tests/
 │
 ├── profiles/
 │   │
-│   ├── specs/
-│   │   ├── default.md
-│   │   ├── devops-admin.md
-│   │   └── dev-coder.md
-│   │
-│   ├── default/
-│   │   ├── profile.yaml
+│   ├── atlas/
+│   │   ├── config.yaml
 │   │   ├── SOUL.md
-│   │   ├── SYSTEM_PROMPT.md
-│   │   ├── RULES.md
-│   │   ├── MEMORY_POLICY.md
-│   │   ├── SKILLS.md
-│   │   ├── MCP.md
+│   │   ├── AGENTS.md
+│   │   ├── mcp.json
+│   │   ├── distribution.yaml
 │   │   │
-│   │   ├── prompts/
-│   │   │   ├── delegation.md
-│   │   │   └── safety.md
+│   │   ├── skills/
+│   │   │   ├── orchestration/delegation/
+│   │   │   ├── governance/safety-check/
+│   │   │   └── communication/summarization/
 │   │   │
-│   │   └── tests/
-│   │       └── delegation-tests.md
+│   │   ├── cron/
+│   │   └── scripts/
 │   │
-│   ├── devops-admin/
-│   │   ├── profile.yaml
+│   ├── aegis/
+│   │   ├── config.yaml
 │   │   ├── SOUL.md
-│   │   ├── SYSTEM_PROMPT.md
-│   │   ├── RULES.md
-│   │   ├── MEMORY_POLICY.md
-│   │   ├── SKILLS.md
-│   │   ├── MCP.md
+│   │   ├── AGENTS.md
+│   │   ├── mcp.json
 │   │   │
-│   │   ├── prompts/
-│   │   │   ├── rollback-thinking.md
-│   │   │   ├── risk-analysis.md
-│   │   │   └── infra-safety.md
+│   │   ├── skills/
+│   │   │   ├── diagnostics/
+│   │   │   ├── observability/
+│   │   │   ├── monitoring/
+│   │   │   └── operations/
 │   │   │
-│   │   └── tests/
-│   │       ├── docker-health.md
-│   │       └── troubleshooting.md
+│   │   └── cron/
 │   │
-│   └── dev-coder/
-│       ├── profile.yaml
+│   └── forge/
+│       ├── config.yaml
 │       ├── SOUL.md
-│       ├── SYSTEM_PROMPT.md
-│       ├── RULES.md
-│       ├── MEMORY_POLICY.md
-│       ├── SKILLS.md
-│       ├── MCP.md
+│       ├── AGENTS.md
+│       ├── mcp.json
 │       │
-│       ├── prompts/
-│       │   ├── branch-policy.md
-│       │   ├── commit-policy.md
-│       │   ├── code-review.md
-│       │   └── safe-refactoring.md
-│       │
-│       └── tests/
-│           ├── git-workflow.md
-│           └── coding-tests.md
+│       └── skills/
+│           ├── analysis/
+│           ├── workflow/
+│           ├── refactoring/
+│           └── validation/
 │
 ├── shared/
 │   │

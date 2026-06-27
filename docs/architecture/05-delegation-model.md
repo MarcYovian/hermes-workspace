@@ -1,8 +1,20 @@
 # Delegation Model
 
-Default profile menjadi single entry point.
+Atlas (orchestrator) menjadi single entry point.
 
-Contoh workflow:
+Alur kerja dengan Kanban multi-agent:
+
+```
+User (Telegram)
+  ↓
+Atlas → kanban_create(assignee="aegis"|"forge", ...)
+  ↓
+Kanban Board (SQLite)
+  ↓ dispatcher (embedded in gateway)
+Aegis/Forge (worker) → execute → kanban_complete(summary, metadata)
+  ↓ notification (cross-profile)
+Atlas notified → laporkan ke user
+```
 
 ## Infrastructure Problem
 
@@ -15,10 +27,11 @@ Kenapa Hermes tidak reply Telegram?
 Flow:
 
 ```txt
-default
-→ devops-admin
-→ summarize
-→ user
+Atlas (triage)
+→ kanban_create → aegis
+→ Aegis diagnosa
+→ kanban_complete
+→ Atlas summarize → user
 ```
 
 ---
@@ -34,27 +47,26 @@ Refactor repository layer Laravel
 Flow:
 
 ```txt
-default
-→ dev-coder
-→ branch proposal
-→ code change
-→ approval
-→ commit
-→ optional push
+Atlas (triage)
+→ kanban_create → forge
+→ Forge: branch → code change → commit
+→ kanban_complete
+→ Atlas summarize → user
 ```
 
 ---
 
 ## Philosophy
 
-Default profile:
+Atlas (orchestrator):
 
 ```txt
-does not pretend to be specialist
+decompose, don't execute
 ```
 
 Ia harus:
 
 ```txt
 delegate when needed
+summarize for user
 ```

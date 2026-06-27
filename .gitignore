@@ -1,0 +1,5 @@
+.env
+.env.EXAMPLE
+**/cron/output/
+**/__pycache__/
+*.pyc

@@ -78,7 +78,7 @@ verification-oriented
 
 ---
 
-## Profile 2 — `devops-admin`
+## Profile 2 — `aegis`
 
 ### Role
 
@@ -154,7 +154,7 @@ stability over speed
 
 ---
 
-## Profile 3 — `dev-coder`
+## Profile 3 — `forge`
 
 ### Role
 

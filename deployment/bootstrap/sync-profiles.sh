@@ -12,31 +12,31 @@ HERMES_CONFIG_DIR="$HOME/.hermes"
 
 echo "[+] Syncing Hermes profiles..."
 
-# Sync default profile
-echo "[*] Syncing default profile..."
-if [ -d "$WORKSPACE_DIR/profiles/default" ]; then
-    rsync -a --delete "$WORKSPACE_DIR/profiles/default/" "$HERMES_CONFIG_DIR/profiles/default/"
-    echo "    -> default profile synced"
+# Sync Atlas profile (orchestrator)
+echo "[*] Syncing atlas profile..."
+if [ -d "$WORKSPACE_DIR/profiles/atlas" ]; then
+    rsync -a --delete "$WORKSPACE_DIR/profiles/atlas/" "$HERMES_CONFIG_DIR/profiles/atlas/"
+    echo "    -> atlas profile synced"
 else
-    echo "    [-] default profile directory not found, skipping"
+    echo "    [-] atlas profile directory not found, skipping"
 fi
 
-# Sync devops-admin profile
-echo "[*] Syncing devops-admin profile..."
-if [ -d "$WORKSPACE_DIR/profiles/devops-admin" ]; then
-    rsync -a --delete "$WORKSPACE_DIR/profiles/devops-admin/" "$HERMES_CONFIG_DIR/profiles/devops-admin/"
-    echo "    -> devops-admin profile synced"
+# Sync Aegis profile (DevOps Admin)
+echo "[*] Syncing aegis profile..."
+if [ -d "$WORKSPACE_DIR/profiles/aegis" ]; then
+    rsync -a --delete "$WORKSPACE_DIR/profiles/aegis/" "$HERMES_CONFIG_DIR/profiles/aegis/"
+    echo "    -> aegis profile synced"
 else
-    echo "    [-] devops-admin profile directory not found, skipping"
+    echo "    [-] aegis profile directory not found, skipping"
 fi
 
-# Sync dev-coder profile
-echo "[*] Syncing dev-coder profile..."
-if [ -d "$WORKSPACE_DIR/profiles/dev-coder" ]; then
-    rsync -a --delete "$WORKSPACE_DIR/profiles/dev-coder/" "$HERMES_CONFIG_DIR/profiles/dev-coder/"
-    echo "    -> dev-coder profile synced"
+# Sync Forge profile (Software Engineer)
+echo "[*] Syncing forge profile..."
+if [ -d "$WORKSPACE_DIR/profiles/forge" ]; then
+    rsync -a --delete "$WORKSPACE_DIR/profiles/forge/" "$HERMES_CONFIG_DIR/profiles/forge/"
+    echo "    -> forge profile synced"
 else
-    echo "    [-] dev-coder profile directory not found, skipping"
+    echo "    [-] forge profile directory not found, skipping"
 fi
 
 echo "[+] Profile sync complete."

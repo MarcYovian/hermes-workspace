@@ -1,4 +1,4 @@
-# Troubleshooting Tests — devops-admin
+# Troubleshooting Tests — aegis
 
 Test scenarios for structured infrastructure troubleshooting.
 

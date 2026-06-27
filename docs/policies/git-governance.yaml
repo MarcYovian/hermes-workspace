@@ -48,7 +48,7 @@ commit_policy:
 
 # Push Policy
 push_policy:
-  dev-coder:
+  forge:
     allowed: true
     approval: required
     before_push:
@@ -60,7 +60,7 @@ push_policy:
     forbidden:
       - git push -f
       - git push to main/master
-  devops-admin:
+  aegis:
     allowed: true
     approval: required
     purpose: infrastructure config changes

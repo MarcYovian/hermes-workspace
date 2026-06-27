@@ -1,4 +1,4 @@
-# Rollback Thinking — devops-admin
+# Rollback Thinking — aegis
 
 Apply before every infrastructure mutation.
 

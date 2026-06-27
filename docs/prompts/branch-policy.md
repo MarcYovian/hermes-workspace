@@ -1,4 +1,4 @@
-# Branch Policy — dev-coder
+# Branch Policy — forge
 
 ## Mandatory Branching
 
