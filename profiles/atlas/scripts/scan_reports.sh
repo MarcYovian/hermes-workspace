@@ -7,7 +7,7 @@ HERMES_BIN="/opt/hermes/bin/hermes"
 PROFILE_DIR="/opt/data/profiles"
 OUTPUT_DIR="$PROFILE_DIR/aegis/cron/output"
 STATE_FILE="$PROFILE_DIR/atlas/cron/report_scan_state.json"
-TELEGRAM_CHAT_ID="846740826"
+TELEGRAM_CHAT_ID="${TELEGRAM_CHAT_ID:-846740826}"
 
 # Load state (last seen timestamps)
 declare -A LAST_SEEN

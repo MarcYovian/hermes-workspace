@@ -66,8 +66,8 @@ cp -r ~/apps/repos/hermes-workspace/profiles/forge/* ~/.hermes/profiles/forge/
 **`~/.hermes/profiles/atlas/.env`:**
 
 ```bash
-OPENAI_API_KEY=sk-e0da93abb4b56ef8-pkjpc2-170984bf
-TELEGRAM_BOT_TOKEN=8901498469:AAEznC15bP2hCLoz5BgJRmq-bn_dRsP49sI
+OPENAI_API_KEY=sk-xxxx...       # ganti dengan key asli di VPS
+TELEGRAM_BOT_TOKEN=xxxx:xxxx    # ganti dengan token asli di VPS
 TELEGRAM_ALLOWED_USERS=846740826
 TELEGRAM_HOME_CHANNEL=846740826
 ```
@@ -75,13 +75,13 @@ TELEGRAM_HOME_CHANNEL=846740826
 **`~/.hermes/profiles/aegis/.env`:**
 
 ```bash
-OPENAI_API_KEY=sk-e0da93abb4b56ef8-pkjpc2-170984bf
+OPENAI_API_KEY=sk-xxxx...    # ganti dengan key asli di VPS
 ```
 
 **`~/.hermes/profiles/forge/.env`:**
 
 ```bash
-OPENAI_API_KEY=sk-e0da93abb4b56ef8-pkjpc2-170984bf
+OPENAI_API_KEY=sk-xxxx...    # ganti dengan key asli di VPS
 ```
 
 ---
