@@ -61,13 +61,15 @@ cp -r ~/apps/repos/hermes-workspace/profiles/forge/* ~/.hermes/profiles/forge/
 
 ## 4. Setup .env per Profile
 
-🖥️ **HOST:** — file-file ini akan terbaca oleh container via mount `~/.hermes:/opt/data`
+🖥️ **HOST:** — file `.env` sudah di-`.gitignore`, tidak ikut repo. Buat manual.
+
+> File `.env` akan terbaca oleh container via mount `~/.hermes:/opt/data`.
 
 **`~/.hermes/profiles/atlas/.env`:**
 
 ```bash
-OPENAI_API_KEY=sk-xxxx...       # ganti dengan key asli di VPS
-TELEGRAM_BOT_TOKEN=xxxx:xxxx    # ganti dengan token asli di VPS
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TELEGRAM_BOT_TOKEN=8901498469:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TELEGRAM_ALLOWED_USERS=846740826
 TELEGRAM_HOME_CHANNEL=846740826
 ```
@@ -75,14 +77,19 @@ TELEGRAM_HOME_CHANNEL=846740826
 **`~/.hermes/profiles/aegis/.env`:**
 
 ```bash
-OPENAI_API_KEY=sk-xxxx...    # ganti dengan key asli di VPS
+# Hanya butuh API key — tidak perlu Telegram
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 **`~/.hermes/profiles/forge/.env`:**
 
 ```bash
-OPENAI_API_KEY=sk-xxxx...    # ganti dengan key asli di VPS
+# Hanya butuh API key — tidak perlu Telegram
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
+
+> **Catatan:** API key bisa berbeda per profile (misal atlas pakai key sendiri).
+> Kalau sama semua, isi aja dengan key yang sama.
 
 ---
 
